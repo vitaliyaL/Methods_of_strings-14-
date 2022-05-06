@@ -49,3 +49,16 @@ function strObj(str) {
   return obj;
 }
 console.log(strObj("  Я хочу учиться! "));
+
+function moderation(str, word) {
+  let str1 = "";
+  for (let i = 0; i < word.length; i++) {
+    str1 += "*";
+  }
+  let regexp = new RegExp(word, "gi");
+  return str.replace(regexp, str1);
+}
+
+let first = "Follow the white raBbiT rabbit RAbBit";
+let bannedWord = "rabbit";
+console.log(moderation(first, bannedWord));
